@@ -55,7 +55,6 @@ function data(json){  /*funcion para mostrar toda la informacion en el JSON*/
 
 
 function calculo(json){ /*funcion para calcular el promedio del total de las notas*/
-	var promedio= ""
 	var suma=0;
 	for(i=0;i<json.length; i++){
 		suma+= json[i].nota;
@@ -65,9 +64,30 @@ function calculo(json){ /*funcion para calcular el promedio del total de las not
 
 
 function mayor(json){ /*funcion para mostrar el estudiante con la nota mayor*/
-
+	var notmayor=json[0].nota;
+	var pos=0;
+	for(i=0;i<json.length;i++){
+		if(json[i].nota > notmayor){
+			notmayor= json[i].nota;
+			pos=i;
+		}
+	}
+	document.getElementById("mayor").innerHTML= notmayor;
 }
+	
 
+
+function menor(json){ /*funcion para mostrar el estudiante con la nota menor*/
+	var notmenor= json[0].nota;
+	var pos=0;
+	for(i=0;i<json.length;i++){
+		if(json[i].nota<notmenor){
+			notmenor= json[i].nota;
+			pos=i;
+		}
+	}
+	document.getElementById("menor").innerHTML= notmenor;
+}
 
 //Funciones para ejecutar onclick
  
@@ -77,4 +97,12 @@ function mostrar_informacion(){
 
 function mostrar_promedio(){
 	calculo(estudiantes);
+}
+
+function mostrar_mayor(){
+	mayor(estudiantes)
+}
+
+function mostrar_menor(){
+	menor(estudiantes)
 }
