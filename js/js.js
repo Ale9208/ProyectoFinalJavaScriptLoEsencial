@@ -42,3 +42,26 @@ var estudiantes= [{
 		"nota": 82
 	}
 	];
+
+//Funciones asignadas al JSON
+
+function data(json){
+	var out="";
+	for(i=0; i<json.length; i++){
+		 out+= "Codigo: " + json[i].codigo +"<br>" + "Nombre: " + json[i].nombre + "<br>" + "Nota: " + json[i].nota + "<br>"+"<br>";
+	}
+	document.getElementById("informacion").innerHTML= out;
+}
+
+
+
+
+
+
+
+
+//Funciones para ejecutar onclick
+ 
+function mostrar_informacion(){
+	data(estudiantes);
+}
