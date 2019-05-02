@@ -1,4 +1,12 @@
 #container{
 	margin: 2%;
-	background-color: yellow;
+}
+
+
+#cont{
+	text-align: center;
+}
+
+p{
+	font-size: 18px;
 }
