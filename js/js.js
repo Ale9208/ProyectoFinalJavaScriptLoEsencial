@@ -45,7 +45,7 @@ var estudiantes= [{
 
 //Funciones asignadas al JSON
 
-function data(json){
+function data(json){  /*funcion para mostrar toda la informacion en el JSON*/
 	var out="";
 	for(i=0; i<json.length; i++){
 		 out+= "Codigo: " + json[i].codigo +"<br>" + "Nombre: " + json[i].nombre + "<br>" + "Nota: " + json[i].nota + "<br>"+"<br>";
@@ -54,14 +54,27 @@ function data(json){
 }
 
 
+function calculo(json){ /*funcion para calcular el promedio del total de las notas*/
+	var promedio= ""
+	var suma=0;
+	for(i=0;i<json.length; i++){
+		suma+= json[i].nota;
+	}
+	document.getElementById("promedio").innerHTML= suma/json.length;
+}
 
 
+function mayor(json){ /*funcion para mostrar el estudiante con la nota mayor*/
 
-
+}
 
 
 //Funciones para ejecutar onclick
  
 function mostrar_informacion(){
 	data(estudiantes);
+}
+
+function mostrar_promedio(){
+	calculo(estudiantes);
 }
